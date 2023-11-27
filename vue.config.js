@@ -1,5 +1,7 @@
+const { defineConfig } = require('@vue/cli-service');
 const { resolve } = require('path');
-module.exports = {
+module.exports = defineConfig({
+  transpileDependencies: true,
   pages: {
     index: {
       entry: 'example/main.ts',
@@ -10,5 +12,5 @@ module.exports = {
   devServer: {
     port: 8080,
     open: true,
-  },
-};
+  }
+});

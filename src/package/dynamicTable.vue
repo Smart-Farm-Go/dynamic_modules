@@ -3,6 +3,6 @@
 </template>
 
 <script lang="ts">export default { name: 'DynamicTable' };</script>
-<script setup lang="ts">
-
+<script lang="ts" setup>
+console.log('DynamicTable');
 </script>
