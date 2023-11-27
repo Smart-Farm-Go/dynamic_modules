@@ -55,7 +55,7 @@ provide('rules', computed(() => props.rules));
 const formRef = ref<any>(null);
 
 const bindForm = computed(() => {
-  return ReWriteObj(props, ['rules', 'disabled', 'labelWidth', 'labelPosition', 'scrollToError', 'showMessage', 'inner']);
+  return ReWriteObj(props, ['rules', 'disabled', 'labelWidth', 'labelPosition', 'scrollToError', 'showMessage', 'inner'], false);
 });
 
 const bindRow = computed(() => {

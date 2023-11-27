@@ -1,14 +1,14 @@
 export const getType = (obj: any, lower = true) => (type => lower ? type.toLowerCase() : type)(Object.prototype.toString.call(obj).slice(8, -1));
 
 // 重写对象
-export function ReWriteObj(value: any, keeps: string[], isEmpty = true) {
+export function ReWriteObj(value: any, keeps: string[], isEmptyValue = true) {
   const target: { [name: string]: any } = {};
   for (const [key, val] of Object.entries(value)) {
     if (keeps.includes(key)) {
       target[key] = val;
     }
   }
-  if (!isEmpty) {
+  if (!isEmptyValue) {
     for (const [keys, value] of Object.entries(target)) {
       if (getType(value) === 'undefined') {
         delete target[keys];
