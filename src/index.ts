@@ -1,17 +1,15 @@
-import DynamicTableView from './package/dynamicTable.vue';
+import { Table } from './package/Table';
 import { Form } from './package/Form';
 import { App } from 'vue';
 
-const install = (app: App<Element>) => {
-  app.component('dynamic-table', DynamicTableView);
-  app.component('dynamic-form', Form);
-};
-
 export const DynamicForm = Form;
-export const DynamicTable = DynamicTableView;
+export const DynamicTable = Table;
 
 export default {
-  DynamicTable: DynamicTableView,
   DynamicForm,
-  install,
+  DynamicTable,
+  install: (app: App<Element>) => {
+    app.component('dynamic-form', DynamicForm);
+    app.component('dynamic-table', DynamicTable);
+  },
 };

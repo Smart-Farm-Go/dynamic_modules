@@ -50,7 +50,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 // 向下传递
 provide('values', computed(() => props.modelValue));
-provide('rules', computed(() => props.rules));
 
 const formRef = ref<any>(null);
 

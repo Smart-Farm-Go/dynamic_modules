@@ -1,5 +1,6 @@
 <template>
-  <component :is="module" v-bind="props.fields" v-model="values[props.fields.prop]"/>
+  <span v-if="!module">{{ values[props.fields.prop] }}</span>
+  <component v-else :is="module" v-bind="props.fields" v-model="values[props.fields.prop]"/>
 </template>
 
 <script lang="ts">export default { name: 'DynamicModules' };</script>
@@ -12,6 +13,6 @@ const module = shallowRef<any>(undefined);
 
 watch(() => props.fields, ({ type }) => {
   // 准备加载模块
-  console.log('fields', type);
+  console.log('fields', props.fields, type);
 }, { immediate: true, deep: true });
 </script>
