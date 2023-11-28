@@ -1,5 +1,7 @@
-type ColumnsAlign = 'left' | 'right' | 'center'
+type ColumnsAlign = 'left' | 'right' | 'center';
+
 export type Columns = {
+  show?: boolean;
   slot?: string;
   prop?: string;
   label: string;
@@ -10,6 +12,4 @@ export type Columns = {
   headerAlign?: ColumnsAlign;
   showOverflowTooltip?: boolean;
   sortable?: 'custom' | boolean;
-  // 子模块 props 负载
-  [key: string]: any;
 }

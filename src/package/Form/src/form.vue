@@ -1,8 +1,8 @@
 <template>
   <el-form ref="formRef" :model="props.modelValue" v-bind="bindForm">
     <el-row v-bind="bindRow">
-      <template v-for="(fields, key) of props.fields" :key="key">
-        <el-col v-if="handlerIsShow(fields)" v-bind="handlerBindCol(fields)">
+      <template v-for="(fields, key) of props.fields">
+        <el-col :key="`form-${key}`" v-if="handlerIsShow(fields)" v-bind="handlerBindCol(fields)">
           <el-form-item v-bind="handlerBindFormItem(fields)">
             <slot v-if="fields.slot" :name="fields.slot" :fields="fields"/>
             <dynamic-modules v-else :fields="fields"/>

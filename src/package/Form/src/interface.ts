@@ -19,12 +19,10 @@ export type Fields = FieldCol & {
   slot?: string;
   type?: string;
   show?: boolean;
-  // form item
+  //
   prop: string;
   label?: string;
   inlineMessage: boolean;
   labelWidth?: string | number;
   rules?: FormItemRule | FormItemRule[];
-  // 子模块 props 负载
-  [key: string]: any
 }
