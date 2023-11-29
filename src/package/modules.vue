@@ -1,5 +1,5 @@
 <template>
-  <component :is="module" v-bind="props.fields" v-model="value" v-on="props.fields.on">{{ value }}</component>
+  <component :is="module" v-bind="props.fields" v-model="value" v-on="props.fields.on || {}">{{ value }}</component>
 </template>
 
 <script lang="ts">export default { name: 'DynamicModules' };</script>
@@ -23,7 +23,7 @@ const value = computed({
 // 加载模块
 // 部分参数通过 v-bind 进行了穿透,
 // 因为是数据所以 event 方法无法穿透，需要将 on 重新挂载到组件上.
-watch(() => props.fields, ({ type }) => {
-  module.value = (Modules as { [name: string]: any })[type] || type;
+watch(() => props.fields, ({ types }) => {
+  module.value = (Modules as { [name: string]: any })[types] || types;
 }, { immediate: true, deep: true });
 </script>

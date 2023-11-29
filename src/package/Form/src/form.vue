@@ -32,11 +32,11 @@ interface Props {
   scrollToError?: boolean;
   inlineMessage?: boolean;
   labelPosition?: 'left' | 'right';
-  rules: { [name: string]: FormItemRule[] };
+  rules?: { [name: string]: FormItemRule[] };
   //
-  gutter: number;
-  align: 'top' | 'middle' | 'bottom';
-  justify: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
+  gutter?: number;
+  align?: 'top' | 'middle' | 'bottom';
+  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
 }
 
 const props = withDefaults(defineProps<Props>(), {

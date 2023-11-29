@@ -95,14 +95,6 @@ interface Props {
 
 ```
 
-## 子组件
-
-`dynamic-modules` 通过 `type` 属性去调用子组件。
-
-1. input: `ElInput`
-2. password: `ElInput`
-3. number: `ElInputNumber`
-
 ### 示例
 ```vue
 <template>
@@ -121,9 +113,9 @@ import { reactive } from 'vue';
 const form = reactive<any>({
   values: { count: 100 },
   fields: [
-    { label: '账号', prop: 'user', type: 'input', placeholder: '请输入账号' },
-    { label: '密码', prop: 'pass', type: 'password', placeholder: '请输入密码', on: { blur: onBlur } },
-    { label: '计数器', prop: 'count', type: 'number', placeholder: '0' },
+    { label: '账号', prop: 'user', types: 'input', placeholder: '请输入账号' },
+    { label: '密码', prop: 'pass', types: 'password', placeholder: '请输入密码', on: { blur: onBlur } },
+    { label: '计数器', prop: 'count', types: 'number', placeholder: '0' },
     { label: '插槽', slot: 'testSlot' },
   ],
 });
@@ -137,11 +129,19 @@ const table = reactive<any>({
     { user: '123456', pass: '123456' },
   ],
   columns: [
-    { label: '账号', prop: 'user', type: 'input', placeholder: '请输入账号' },
-    { label: '密码', prop: 'pass', type: 'password', placeholder: '请输入密码' },
+    { label: '账号', prop: 'user', types: 'input', placeholder: '请输入账号' },
+    { label: '密码', prop: 'pass', types: 'password', placeholder: '请输入密码' },
     { label: '插槽', slot: 'testSlot' },
   ],
 });
 </script>
 
 ```
+
+## 子组件
+
+`dynamic-modules` 通过 `type` 属性去调用子组件。
+
+1. input: `ElInput`
+2. password: `ElInput`
+3. number: `ElInputNumber`
